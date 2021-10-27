@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Assignment_2_Server.Data.Persistence;
+using Assignment_2_Server.Logic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,6 +28,8 @@ namespace Assignment_2_Server
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Assignment_2_Server", Version = "v1"});
             });
             services.AddSingleton<IAdultRepository, AdultRepository>();
+            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<IVerifier, Verifier>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

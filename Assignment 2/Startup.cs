@@ -1,9 +1,11 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Assignment_2.Data;
+using Validator = Assignment_2.Data.Validator;
 
 namespace Assignment_2
 {
@@ -23,6 +25,8 @@ namespace Assignment_2
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<IAdultsService, RestAdultService>();
+            services.AddSingleton<IUserService, UserService>();
+            services.AddSingleton<IValidator, Validator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

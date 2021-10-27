@@ -1,22 +1,30 @@
 @page "/addAdults"
 @using Models
 @using Assignment_2.Data
+@inject IValidator _validator;
 
 
-
-@if (!_buttonPressed)
-    {
-        <h1>Add adult</h1>
-        <p>Here you can add new adults.</p>
-        <button @onclick="AddButtonPressed">Add</button>
-    }
-
-@if (_buttonPressed)
+@if(_validator.GetAuthorization())
 {
-    <AddInformationAboutAdult/>   
+    @if (!_buttonPressed)
+        {
+            <h1>Add adult</h1>
+            <p>Here you can add new adults.</p>
+            <button @onclick="AddButtonPressed">Add</button>
+        }
+
+    @if (_buttonPressed)
+    {
+        <AddInformationAboutAdult/>   
+    }
 }
+
+
+@if (!_validator.GetAuthorization())
+{
+    <h1>You must first login to add Adults.</h1>
 }
-<h1>You must first login to add Adults.</h1>
+
 
 
 

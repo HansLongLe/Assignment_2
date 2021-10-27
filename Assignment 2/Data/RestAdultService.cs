@@ -37,7 +37,7 @@ namespace Assignment_2.Data
                 adultAsJson,
                 Encoding.UTF8,
                 "application/json");
-            HttpResponseMessage responseMessage = await _client.PostAsync(Uri + "/adults", content);
+            var responseMessage = await _client.PostAsync(Uri + "/Adults", content);
             if (!responseMessage.IsSuccessStatusCode)
             {
                 throw new Exception($"Error, {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");

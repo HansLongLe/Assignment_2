@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -10,16 +8,16 @@ namespace Assignment_2_Server.Data.Persistence
 {
     public class AdultRepository : IAdultRepository
     {
-        private IList<Adult> Adults;
-        private readonly string adultsFile = System.IO.Directory.GetCurrentDirectory() + "\\data\\adults.json";
+        private readonly IList<Adult> _adults;
+        private readonly string _adultsFile = Directory.GetCurrentDirectory() + "\\data\\adults.json";
         
         public AdultRepository()
         {
-            Adults = File.Exists(adultsFile) ? ReadData<Adult>(adultsFile) : new List<Adult>();
+            _adults = File.Exists(_adultsFile) ? ReadData<Adult>() : new List<Adult>();
         }
-        private IList<T> ReadData<T>(string s)
+        private IList<T> ReadData<T>()
         {
-            using (var jsonReader = File.OpenText(adultsFile))
+            using (var jsonReader = File.OpenText(_adultsFile))
             {
                 return JsonSerializer.Deserialize<List<T>>(jsonReader.ReadToEnd());
             }
@@ -27,20 +25,20 @@ namespace Assignment_2_Server.Data.Persistence
 
         public IList<Adult> GetAdults()
         {
-            return Adults;
+            return  _adults;
         }
 
-        public void AddAdult(Adult adult)
+        public async Task AddAdult(Adult adult)
         {
-            Adults.Add(adult);
-            // storing persons
-            var jsonAdults = JsonSerializer.Serialize(Adults, new JsonSerializerOptions
+            _adults.Add(adult);
+            var jsonAdults = JsonSerializer.Serialize(_adults, new JsonSerializerOptions
             {
                 WriteIndented = true
             });
-            using (var outputFile = new StreamWriter(adultsFile, false))
+            
+            using (var outputFile = new StreamWriter(_adultsFile, false))
             {
-                outputFile.Write(jsonAdults);
+                await outputFile.WriteAsync(jsonAdults);
             }
         }
     }

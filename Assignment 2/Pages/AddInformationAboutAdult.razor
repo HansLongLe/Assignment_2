@@ -76,11 +76,8 @@
     private async void AddButtonPressed()
     {
         _buttonPressed = true;
-        var adults = await _adultsService.GetAdultsAsync();
-        var maxId = adults.Count;
         var adult = new Adult
         {
-            Id = maxId + 1,
             FirstName = _firstName,
             LastName = _lastName,
             HairColor = _hairColor,

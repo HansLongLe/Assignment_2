@@ -1,0 +1,40 @@
+﻿@page "/login"
+@using Models
+@using Assignment_2.Data
+@inject IUserService _userService;
+@inject IValidator _validator
+
+@if (!_validator.GetAuthorization())
+{
+    <div> Username <input type="text" @bind="_username"> Password <input type="text" @bind="_password"> <button @onclick="Login">Login</button> </div>
+}
+@if (_validator.GetAuthorization())
+{
+    <button @onclick="Logout">Logout</button>
+}
+
+
+@code
+    {
+        private string _username;
+        private string _password;
+        private bool _authorized;
+        
+
+        private async void Login()
+        {
+            var user = new User
+            {
+                UserName = _username,
+                Password = _password
+            };
+            
+            _validator.Set(await _userService.GetResult(user));
+        }
+
+    private void Logout()
+    {
+        _validator.Set(false);
+    }
+    }
+}

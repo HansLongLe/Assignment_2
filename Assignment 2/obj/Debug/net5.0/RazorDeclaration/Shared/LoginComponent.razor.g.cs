@@ -4,11 +4,12 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Assignment_2.Pages
+namespace Assignment_2.Shared
 {
     #line hidden
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
@@ -82,41 +83,21 @@ using Assignment_2.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddInformationAboutAdult.razor"
+#line 2 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Shared\LoginComponent.razor"
 using Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddInformationAboutAdult.razor"
-using System.ComponentModel.DataAnnotations;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddInformationAboutAdult.razor"
-using System.Diagnostics.CodeAnalysis;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddInformationAboutAdult.razor"
-using System.Linq;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddInformationAboutAdult.razor"
+#line 3 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Shared\LoginComponent.razor"
 using Assignment_2.Data;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class AddInformationAboutAdult : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/login")]
+    public partial class LoginComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -124,78 +105,35 @@ using Assignment_2.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddInformationAboutAdult.razor"
-       
-    private bool _buttonPressed = false;
+#line 18 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Shared\LoginComponent.razor"
+     
+        private string _username;
+        private string _password;
+        private bool _authorized;
+        
 
-    [Required]
-    [NotNull]
-    private string _firstName;
-    
-    [Required]
-    [NotNull]
-    private string _lastName;
-    
-    [Required]
-    [NotNull]
-    private string _hairColor;
-    
-    [Required]
-    [NotNull]
-    private string _eyeColor;
-    
-    [Required]
-    [Range(18, int.MaxValue)]
-    private int _age;
-    
-    [Required]
-    [Range(0, int.MaxValue)]
-    private int _weight;
-    
-    [Required]
-    [Range(0, int.MaxValue)]
-    private int _height;
-    
-    [Required]
-    [NotNull]
-    private string _sex;
-    
-    [Required]
-    [NotNull]
-    private string _jobTitle;
-    
-    [Required]
-    [Range(0, int.MaxValue)]
-    private int _salary;
-
-
-    private async void AddButtonPressed()
-    {
-        _buttonPressed = true;
-        var adult = new Adult
+        private async void Login()
         {
-            FirstName = _firstName,
-            LastName = _lastName,
-            HairColor = _hairColor,
-            EyeColor = _eyeColor,
-            Age = _age,
-            Weight = _weight,
-            Height = _height,
-            Sex = _sex,
-            JobTitle = new Job
+            var user = new User
             {
-                JobTitle = _jobTitle,
-                Salary = _salary
-            }
-        };
+                UserName = _username,
+                Password = _password
+            };
+            
+            _validator.Set(await _userService.GetResult(user));
+        }
 
-        await _adultsService.AddAdultAsync(adult);
+    private void Logout()
+    {
+        _validator.Set(false);
     }
+    
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultsService _adultsService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IValidator _validator { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserService _userService { get; set; }
     }
 }
 #pragma warning restore 1591

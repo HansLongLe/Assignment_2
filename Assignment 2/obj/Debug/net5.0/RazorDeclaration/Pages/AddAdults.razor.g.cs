@@ -105,7 +105,7 @@ using Assignment_2.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 25 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddAdults.razor"
+#line 33 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddAdults.razor"
        
     private bool _buttonPressed = false;
 
@@ -118,6 +118,7 @@ using Assignment_2.Data;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IValidator _validator { get; set; }
     }
 }
 #pragma warning restore 1591

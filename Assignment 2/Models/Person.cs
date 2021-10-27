@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 namespace Assignment_2.Models {
 public class Person {
     [JsonPropertyName("id")]
-    public int Id { get; init; }
+    public int Id { get; }
     
     [JsonPropertyName("firstName")]
     public string FirstName { get; init; }

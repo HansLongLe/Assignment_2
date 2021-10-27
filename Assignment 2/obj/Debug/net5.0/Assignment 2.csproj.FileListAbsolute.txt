@@ -56,3 +56,5 @@ C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\obj\Debug\net5.0\RazorDec
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\obj\Debug\net5.0\Razor\Pages\AddAdults.razor.g.cs
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\obj\Debug\net5.0\Razor\Pages\AddInformationAboutAdult.razor.g.cs
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\obj\Debug\net5.0\Razor\Pages\Adults.razor.g.cs
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\obj\Debug\net5.0\RazorDeclaration\Shared\LoginComponent.razor.g.cs
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\obj\Debug\net5.0\Razor\Shared\LoginComponent.razor.g.cs

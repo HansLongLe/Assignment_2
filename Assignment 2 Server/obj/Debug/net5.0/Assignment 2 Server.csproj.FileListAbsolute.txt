@@ -28,3 +28,4 @@ C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\r
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.pdb
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.genruntimeconfig.cache
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Data\adults.json
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Data\users.json

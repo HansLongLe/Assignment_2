@@ -4,33 +4,32 @@ using Assignment_2_Server.Data.Models;
 using Assignment_2_Server.Data.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace Assignment_2_Server.Controllers
 {
     [Route("[controller]s")]
     [ApiController]
     public class AdultController : ControllerBase
     {
-        private readonly IAdultRepository AdultRepository;
-        public AdultController()
+        private readonly IAdultRepository _adultRepository;
+        public AdultController(IAdultRepository adultRepository)
         {
-            AdultRepository = new AdultRepository();
+            _adultRepository = adultRepository;
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetAdults()
+        public ActionResult GetAdults()
         {
             try
             {
-                return Ok(AdultRepository.GetAdults());
+                return Ok(_adultRepository.GetAdults());
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
             }
-            
         }
+        
 
         [HttpPost]
         public async Task<ActionResult<Adult>> CreateAdult(Adult adult)
@@ -42,7 +41,8 @@ namespace Assignment_2_Server.Controllers
                     return BadRequest();
                 }
 
-                AdultRepository.AddAdult(adult);
+                adult.Id = _adultRepository.GetAdults().Count;
+                await _adultRepository.AddAdult(adult);
                 return CreatedAtAction(nameof(GetAdults), new {adult.Id});
             }
             catch (Exception e)
