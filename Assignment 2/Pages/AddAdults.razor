@@ -1,0 +1,33 @@
+@page "/addAdults"
+@using Models
+@using Assignment_2.Data
+
+
+
+@if (!buttonPressed)
+    {
+        <h1>Add adult</h1>
+        <p>Here you can add new adults.</p>
+        <button @onclick="addButtonPressed">Add</button>
+    }
+
+@if (buttonPressed)
+{
+    <AddInformationAboutAdult/>   
+}
+}
+<h1>You must first login to add Adults.</h1>
+
+
+
+
+
+@code {
+    private Boolean buttonPressed = false;
+    
+    public void addButtonPressed()
+    {
+        buttonPressed = true;
+    }
+
+}

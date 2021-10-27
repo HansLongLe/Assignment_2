@@ -1,0 +1,30 @@
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\appsettings.json
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Data\adults.json
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.exe
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.deps.json
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.runtimeconfig.json
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.runtimeconfig.dev.json
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.dll
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\ref\Assignment 2 Server.dll
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.pdb
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.csproj.AssemblyReference.cache
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.AssemblyInfoInputs.cache
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.AssemblyInfo.cs
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.csproj.CoreCompileInputs.cache
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\staticwebassets\Assignment 2 Server.StaticWebAssets.Manifest.cache
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\staticwebassets\Assignment 2 Server.StaticWebAssets.xml
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\scopedcss\bundle\Assignment 2 Server.styles.css
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.RazorTargetAssemblyInfo.cache
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.csproj.CopyComplete
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.dll
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\ref\Assignment 2 Server.dll
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.pdb
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.genruntimeconfig.cache

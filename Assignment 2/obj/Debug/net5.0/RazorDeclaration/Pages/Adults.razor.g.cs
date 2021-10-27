@@ -83,14 +83,28 @@ using Assignment_2.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\FetchData.razor"
+#line 2 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
 using Assignment_2.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 3 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
+using Assignment_2.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
+using System.Collections.ObjectModel;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    public partial class Adults : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,20 +112,34 @@ using Assignment_2.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\FetchData.razor"
-       
-    private WeatherForecast[] forecasts;
+#line 92 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
+ 
+    private String searchedText {get; set; }
+    private Boolean visible = true;
+    private IList<Adult> allAdults = new Collection<Adult>();
+
+    public void Search()
+    {
+        visible = false;
+    }
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        try
+        {
+            allAdults = await AdultsService.GetAdultsAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
-
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultsService AdultsService { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -82,8 +82,22 @@ using Assignment_2.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
-    public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddAdults.razor"
+using Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddAdults.razor"
+using Assignment_2.Data;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/addAdults")]
+    public partial class AddAdults : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,13 +105,13 @@ using Assignment_2.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Counter.razor"
+#line 25 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddAdults.razor"
        
-    private int currentCount = 0;
-
-    private void IncrementCount()
+    private Boolean buttonPressed = false;
+    
+    public void addButtonPressed()
     {
-        currentCount++;
+        buttonPressed = true;
     }
 
 

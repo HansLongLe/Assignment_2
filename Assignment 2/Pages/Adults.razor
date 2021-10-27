@@ -1,5 +1,8 @@
 @page "/"
-
+@using Assignment_2.Data
+@using Assignment_2.Models
+@using System.Collections.ObjectModel
+@inject IAdultsService AdultsService;
 
 
 
@@ -36,7 +39,7 @@ Here you can view information of every registered adults.
         </tr>
 @if (visible == true)
 {
-    @foreach (var adult in fileContext.Adults)
+    @foreach (var adult in allAdults)
     {
         <tr>
             <td>@adult.Id</td>
@@ -56,7 +59,7 @@ Here you can view information of every registered adults.
 }
 @if (visible == false)
 {
-    @foreach (var adult in fileContext.Adults)
+    @foreach (var adult in allAdults)
     {
         if (adult.FirstName.Contains(searchedText) || adult.LastName.Contains(searchedText) || adult.HairColor.Contains(searchedText)
         ||adult.EyeColor.Contains(searchedText) || adult.Age.ToString().Contains(searchedText) ||adult.Weight.ToString().Contains(searchedText) 
@@ -87,12 +90,25 @@ Here you can view information of every registered adults.
 
 @code
 {
-    private FileContext fileContext = new FileContext();
     private String searchedText {get; set; }
     private Boolean visible = true;
-    
+    private IList<Adult> allAdults = new Collection<Adult>();
+
     public void Search()
     {
         visible = false;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            allAdults = await AdultsService.GetAdultsAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }
