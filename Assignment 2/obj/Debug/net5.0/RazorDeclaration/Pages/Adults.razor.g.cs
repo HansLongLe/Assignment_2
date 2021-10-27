@@ -112,22 +112,22 @@ using System.Collections.ObjectModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 92 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
+#line 101 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
  
-    private String searchedText {get; set; }
-    private Boolean visible = true;
-    private IList<Adult> allAdults = new Collection<Adult>();
+    private string SearchedText {get; set; }
+    private bool _visible = true;
+    private IList<Adult> _allAdults = new Collection<Adult>();
 
-    public void Search()
+    private void Search()
     {
-        visible = false;
+        _visible = false;
     }
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            allAdults = await AdultsService.GetAdultsAsync();
+            _allAdults = await _adultsService.GetAdultsAsync();
         }
         catch (Exception e)
         {
@@ -139,7 +139,7 @@ using System.Collections.ObjectModel;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultsService AdultsService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultsService _adultsService { get; set; }
     }
 }
 #pragma warning restore 1591

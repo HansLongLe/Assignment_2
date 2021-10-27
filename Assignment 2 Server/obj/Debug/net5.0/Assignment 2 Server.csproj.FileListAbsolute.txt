@@ -1,6 +1,5 @@
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\appsettings.json
-C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Data\adults.json
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.exe
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.deps.json
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Assignment 2 Server.runtimeconfig.json
@@ -28,3 +27,4 @@ C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\A
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\ref\Assignment 2 Server.dll
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.pdb
 C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\obj\Debug\net5.0\Assignment 2 Server.genruntimeconfig.cache
+C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2 Server\bin\Debug\net5.0\Data\adults.json

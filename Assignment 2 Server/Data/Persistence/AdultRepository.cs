@@ -34,11 +34,11 @@ namespace Assignment_2_Server.Data.Persistence
         {
             Adults.Add(adult);
             // storing persons
-            string jsonAdults = JsonSerializer.Serialize(Adults, new JsonSerializerOptions
+            var jsonAdults = JsonSerializer.Serialize(Adults, new JsonSerializerOptions
             {
                 WriteIndented = true
             });
-            using (StreamWriter outputFile = new StreamWriter(adultsFile, false))
+            using (var outputFile = new StreamWriter(adultsFile, false))
             {
                 outputFile.Write(jsonAdults);
             }
