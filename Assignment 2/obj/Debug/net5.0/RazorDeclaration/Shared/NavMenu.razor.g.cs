@@ -92,13 +92,13 @@ using Assignment_2.Shared;
 #nullable restore
 #line 23 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Shared\NavMenu.razor"
        
-    private bool collapseNavMenu = true;
+    private bool _collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => _collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
-        collapseNavMenu = !collapseNavMenu;
+        _collapseNavMenu = !_collapseNavMenu;
     }
 
 

@@ -2,6 +2,7 @@
 @using Assignment_2.Data
 @using Assignment_2.Models
 @using System.Collections.ObjectModel
+@using System.Globalization
 @inject IAdultsService _adultsService;
 
 
@@ -39,12 +40,10 @@ Here you can view information of every registered adults.
             <th>Salary</th>
         </tr>
         
-        @if (_visible == true)
+        @if (_visible)
 {
     if (_allAdults.Count != 0)
     {
-        Console.WriteLine((_allAdults.Count));
-        Console.WriteLine(_allAdults[0].FirstName);
         @foreach (var adult in _allAdults)
         {
             <tr>
@@ -70,7 +69,7 @@ Here you can view information of every registered adults.
         @foreach (var adult in _allAdults)
     {
         if (adult.FirstName.Contains(SearchedText) || adult.LastName.Contains(SearchedText) || adult.HairColor.Contains(SearchedText)
-        ||adult.EyeColor.Contains(SearchedText) || adult.Age.ToString().Contains(SearchedText) ||adult.Weight.ToString().Contains(SearchedText) 
+            ||adult.EyeColor.Contains(SearchedText) || adult.Age.ToString().Contains(SearchedText) ||adult.Weight.ToString(CultureInfo.InvariantCulture).Contains(SearchedText) 
         || adult.Height.ToString().Contains(SearchedText) || adult.Sex.Contains(SearchedText) || adult.JobTitle.JobTitle.Contains(SearchedText)
         || adult.JobTitle.Salary.ToString().Contains(SearchedText))
         {

@@ -126,67 +126,79 @@ using Assignment_2.Data;
 #nullable restore
 #line 32 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddInformationAboutAdult.razor"
        
-    private Boolean buttonPressed = false;
+    private bool _buttonPressed = false;
 
     [Required]
     [NotNull]
-    private String firstName;
-    [Required]
-    [NotNull]
-    private String lastName;
-    [Required]
-    [NotNull]
-    private String hairColor;
-    [Required]
-    [NotNull]
-    private String eyeColor;
-    [Required]
-    [Range(18, Int32.MaxValue)]
-    private int? age;
-    [Required]
-    [Range(0, Int32.MaxValue)]
-    private int? weight;
-    [Required]
-    [Range(0,Int32.MaxValue)]
-    private int? height;
-    [Required]
-    [NotNull]
-    private String sex;
-    [Required]
-    [NotNull]
-    private String jobTitle;
-    [Required]
-    [Range(0,Int32.MaxValue)]
-    private int? salary;
+    private string _firstName;
     
+    [Required]
+    [NotNull]
+    private string _lastName;
+    
+    [Required]
+    [NotNull]
+    private string _hairColor;
+    
+    [Required]
+    [NotNull]
+    private string _eyeColor;
+    
+    [Required]
+    [Range(18, int.MaxValue)]
+    private int _age;
+    
+    [Required]
+    [Range(0, int.MaxValue)]
+    private int _weight;
+    
+    [Required]
+    [Range(0, int.MaxValue)]
+    private int _height;
+    
+    [Required]
+    [NotNull]
+    private string _sex;
+    
+    [Required]
+    [NotNull]
+    private string _jobTitle;
+    
+    [Required]
+    [Range(0, int.MaxValue)]
+    private int _salary;
 
-    public async void addButtonPressed()
+
+    private async void AddButtonPressed()
     {
-        buttonPressed = true;
-        Adult adult = new Adult();
-        IList<Adult> adults = await AdultsService.GetAdultsAsync();
-        int maxID = adults.Count;
-        adult.Id = maxID+1;
-        adult.FirstName = firstName;
-        adult.LastName = lastName;
-        adult.HairColor = hairColor;
-        adult.EyeColor = eyeColor;
-        adult.Age = (int)age;
-        adult.Weight = (int)weight;
-        adult.Height = (int)height;
-        adult.Sex = sex;
-        Job job = new Job();
-        job.JobTitle = jobTitle;
-        job.Salary = (int)salary;
-        adult.JobTitle = job;
+        _buttonPressed = true;
+        var adults = await _adultsService.GetAdultsAsync();
+        var maxId = adults.Count;
+        var adult = new Adult
+        {
+            Id = maxId + 1,
+            FirstName = _firstName,
+            LastName = _lastName,
+            HairColor = _hairColor,
+            EyeColor = _eyeColor,
+            Age = _age,
+            Weight = _weight,
+            Height = _height,
+            Sex = _sex,
+            JobTitle = new Job
+            {
+                JobTitle = _jobTitle,
+                Salary = _salary
+            }
+        };
 
-        AdultsService.AddAdultAsync(adult);
+        await _adultsService.AddAdultAsync(adult);
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultsService AdultsService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultsService _adultsService { get; set; }
     }
 }
 #pragma warning restore 1591

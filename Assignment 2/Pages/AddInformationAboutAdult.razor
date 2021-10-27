@@ -3,87 +3,99 @@
 @using System.Diagnostics.CodeAnalysis
 @using System.Linq
 @using Assignment_2.Data
-@inject IAdultsService AdultsService
+@inject IAdultsService _adultsService
 
-@if (!buttonPressed)
+@if (!_buttonPressed)
 {
     <h1>Add adult</h1>
     <h3><b>Adult information</b></h3>
     <li>
-        <ul><input type="text" placeholder="First name.." @bind="firstName">First name</ul>
-        <ul><input type="text" placeholder="Last name.." @bind="lastName">Last name</ul>
-        <ul><input type="text" placeholder="Hair color.."@bind="hairColor">Hair color</ul>
-        <ul><input type="text" placeholder="Eye color.."@bind="eyeColor">Eye color</ul>
-        <ul><input type="number" placeholder="Age.."@bind="age">Age</ul>
-        <ul><input type="number" placeholder="Weight.." @bind="weight">Weight</ul>
-        <ul><input type="number" placeholder="Height.."@bind="height">Height</ul>
-        <ul><input type="text" placeholder="Sex.."@bind="sex">Sex</ul>
-        <ul><input type="text" placeholder="Job title.."@bind="jobTitle">Job title</ul>
-        <ul><input type="number" placeholder="Salary.."@bind="salary">Salary</ul>
+        <ul><input type="text" placeholder="First name.." @bind="_firstName">First name</ul>
+        <ul><input type="text" placeholder="Last name.." @bind="_lastName">Last name</ul>
+        <ul><input type="text" placeholder="Hair color.." @bind="_hairColor">Hair color</ul>
+        <ul><input type="text" placeholder="Eye color.." @bind="_eyeColor">Eye color</ul>
+        <ul><input type="number" placeholder="Age.." @bind="_age">Age</ul>
+        <ul><input type="number" placeholder="Weight.." @bind="_weight">Weight</ul>
+        <ul><input type="number" placeholder="Height.." @bind="_height">Height</ul>
+        <ul><input type="text" placeholder="Sex.." @bind="_sex">Sex</ul>
+        <ul><input type="text" placeholder="Job title.." @bind="_jobTitle">Job title</ul>
+        <ul><input type="number" placeholder="Salary.." @bind="_salary">Salary</ul>
     </li>
-    <button @onclick="addButtonPressed">Add</button>
+    <button @onclick="AddButtonPressed">Add</button>
 }
 
-@if (buttonPressed)
+@if (_buttonPressed)
 {
     <AddAdults/>  
 }
 
 @code {
-    private Boolean buttonPressed = false;
+    private bool _buttonPressed = false;
 
     [Required]
     [NotNull]
-    private String firstName;
-    [Required]
-    [NotNull]
-    private String lastName;
-    [Required]
-    [NotNull]
-    private String hairColor;
-    [Required]
-    [NotNull]
-    private String eyeColor;
-    [Required]
-    [Range(18, Int32.MaxValue)]
-    private int? age;
-    [Required]
-    [Range(0, Int32.MaxValue)]
-    private int? weight;
-    [Required]
-    [Range(0,Int32.MaxValue)]
-    private int? height;
-    [Required]
-    [NotNull]
-    private String sex;
-    [Required]
-    [NotNull]
-    private String jobTitle;
-    [Required]
-    [Range(0,Int32.MaxValue)]
-    private int? salary;
+    private string _firstName;
     
+    [Required]
+    [NotNull]
+    private string _lastName;
+    
+    [Required]
+    [NotNull]
+    private string _hairColor;
+    
+    [Required]
+    [NotNull]
+    private string _eyeColor;
+    
+    [Required]
+    [Range(18, int.MaxValue)]
+    private int _age;
+    
+    [Required]
+    [Range(0, int.MaxValue)]
+    private int _weight;
+    
+    [Required]
+    [Range(0, int.MaxValue)]
+    private int _height;
+    
+    [Required]
+    [NotNull]
+    private string _sex;
+    
+    [Required]
+    [NotNull]
+    private string _jobTitle;
+    
+    [Required]
+    [Range(0, int.MaxValue)]
+    private int _salary;
 
-    public async void addButtonPressed()
+
+    private async void AddButtonPressed()
     {
-        buttonPressed = true;
-        Adult adult = new Adult();
-        IList<Adult> adults = await AdultsService.GetAdultsAsync();
-        int maxID = adults.Count;
-        adult.Id = maxID+1;
-        adult.FirstName = firstName;
-        adult.LastName = lastName;
-        adult.HairColor = hairColor;
-        adult.EyeColor = eyeColor;
-        adult.Age = (int)age;
-        adult.Weight = (int)weight;
-        adult.Height = (int)height;
-        adult.Sex = sex;
-        Job job = new Job();
-        job.JobTitle = jobTitle;
-        job.Salary = (int)salary;
-        adult.JobTitle = job;
+        _buttonPressed = true;
+        var adults = await _adultsService.GetAdultsAsync();
+        var maxId = adults.Count;
+        var adult = new Adult
+        {
+            Id = maxId + 1,
+            FirstName = _firstName,
+            LastName = _lastName,
+            HairColor = _hairColor,
+            EyeColor = _eyeColor,
+            Age = _age,
+            Weight = _weight,
+            Height = _height,
+            Sex = _sex,
+            JobTitle = new Job
+            {
+                JobTitle = _jobTitle,
+                Salary = _salary
+            }
+        };
 
-        AdultsService.AddAdultAsync(adult);
+        await _adultsService.AddAdultAsync(adult);
     }
 }

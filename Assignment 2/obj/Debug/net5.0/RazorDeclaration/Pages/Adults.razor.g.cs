@@ -103,6 +103,13 @@ using System.Collections.ObjectModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
+using System.Globalization;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Adults : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +119,7 @@ using System.Collections.ObjectModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 101 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
+#line 100 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\Adults.razor"
  
     private string SearchedText {get; set; }
     private bool _visible = true;

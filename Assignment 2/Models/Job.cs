@@ -5,9 +5,9 @@ namespace Assignment_2.Models
     public class Job
     {
         [JsonPropertyName("jobTitle")]
-        public string JobTitle { get; set; }
+        public string JobTitle { get; init; }
         
         [JsonPropertyName("salary")]
-        public int Salary { get; set; }
+        public int Salary { get; init; }
     }
 }

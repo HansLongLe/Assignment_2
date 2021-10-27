@@ -3,31 +3,31 @@ using System.Text.Json.Serialization;
 namespace Assignment_2.Models {
 public class Person {
     [JsonPropertyName("id")]
-    public int Id { get; set; }
+    public int Id { get; init; }
     
     [JsonPropertyName("firstName")]
-    public string FirstName { get; set; }
+    public string FirstName { get; init; }
     
     [JsonPropertyName("lastName")]
-    public string LastName { get; set; }
+    public string LastName { get; init; }
     
     [JsonPropertyName("hairColor")]
-    public string HairColor { get; set; }
+    public string HairColor { get; init; }
     
     [JsonPropertyName("eyeColor")]
-    public string EyeColor { get; set; }
+    public string EyeColor { get; init; }
     
     [JsonPropertyName("age")]
-    public int Age { get; set; }
+    public int Age { get; init; }
     
     [JsonPropertyName("weight")]
-    public float Weight { get; set; }
+    public float Weight { get; init; }
     
     [JsonPropertyName("height")]
-    public int Height { get; set; }
+    public int Height { get; init; }
     
     [JsonPropertyName("sex")]
-    public string Sex { get; set; }
+    public string Sex { get; init; }
 }
 
 

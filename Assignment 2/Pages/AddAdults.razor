@@ -4,14 +4,14 @@
 
 
 
-@if (!buttonPressed)
+@if (!_buttonPressed)
     {
         <h1>Add adult</h1>
         <p>Here you can add new adults.</p>
-        <button @onclick="addButtonPressed">Add</button>
+        <button @onclick="AddButtonPressed">Add</button>
     }
 
-@if (buttonPressed)
+@if (_buttonPressed)
 {
     <AddInformationAboutAdult/>   
 }
@@ -23,11 +23,11 @@
 
 
 @code {
-    private Boolean buttonPressed = false;
-    
-    public void addButtonPressed()
+    private bool _buttonPressed = false;
+
+    private void AddButtonPressed()
     {
-        buttonPressed = true;
+        _buttonPressed = true;
     }
 
 }

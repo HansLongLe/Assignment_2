@@ -107,11 +107,11 @@ using Assignment_2.Data;
 #nullable restore
 #line 25 "C:\Users\hansl\RiderProjects\Assignment 2\Assignment 2\Pages\AddAdults.razor"
        
-    private Boolean buttonPressed = false;
-    
-    public void addButtonPressed()
+    private bool _buttonPressed = false;
+
+    private void AddButtonPressed()
     {
-        buttonPressed = true;
+        _buttonPressed = true;
     }
 
 
